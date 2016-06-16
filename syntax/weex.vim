@@ -8,7 +8,7 @@ endif
 
 syntax include @HTML syntax/html.vim
 unlet b:current_syntax
-syntax region template matchgroup=weexTag keepend start=/^<template>/ end=/^<\/template>/ contains=@HTML fold
+syntax region template matchgroup=weexTag keepend start=/^<template.\{-}>/ end=/^<\/template>/ contains=@HTML fold
 " {{}} syntax
 syntax region weexNormalInside matchgroup=weexBraces start=/\({\)\@<!{{\([{!%]\)\@!\~\?/ end=/\~\?\([%}]\)\@<!}}\(}\)\@!/ containedin=template,htmlString
 " 操作符
