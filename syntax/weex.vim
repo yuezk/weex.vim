@@ -44,8 +44,6 @@ HtmlHiLink weexComponent htmlTag
 " 大括号部分高亮
 " {{ }}
 HtmlHiLink weexBraces Special
-" 操作符高亮
-HtmlHiLink weexOperators Operator
 
 let b:current_syntax = "weex"
 delcommand HtmlHiLink
