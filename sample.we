@@ -1,0 +1,104 @@
+<we-element name="foo">
+  <template>
+    <div>
+      <image src="{{imageUrl}}" onclick="test"></image>
+      <text>{{title}}</text>
+    </div>
+  </template>
+  <script>
+    module.exports = {
+      data: {
+        title: '',
+        imageUrl: ''
+      },
+      methods: {
+        test: function () {
+          this.$dispatch('notify', {a: 1})
+        }
+      }
+    }
+  </script>
+</we-element>
+
+<template>
+  <scroller>
+    <wxc-panel title="Title Levels" type="primary" if={{isShow}} :display={{test}}>
+      <wxc-hn repeat="{{levels}}" level="{{level}}" value="H{{level > 0}}, Level {{level}}"></wxc-hn>
+    </wxc-panel>
+
+    <wxc-panel title="Buttons" append="tree" type="primary">
+      <div style="flex-direction: row; margin-top: {{data.fontSize}}px" repeat="{{buttons}}">
+        <wxc-button type="{{type}}" size="large" value="{{type === 0 ? '0' : ''}}" onclick="{{clicked}}" style=""></wxc-button>
+        <wxc-button type="{{type}}" size="middle" value="{{type}}" onclick="{{clicked}}"
+                    style="margin-left:5px;width:210px;"></wxc-button>
+        <wxc-button type="{{type === 1}}" size="small" value="{{type}}" onclick="{{clicked}}"
+                    style="margin-left:5px;"></wxc-button>
+      </div>
+
+      <!--<div style="flex-direction: row; margin-top: 12px">-->
+      <!--<wxc-button disabled="{{true}}" type="" size="large" value="Disabled" onclick="{{clicked}}"></wxc-button>-->
+      <!--<wxc-button disabled="{{false}}" type="primary" size="large" value="Enabled" onclick="{{clicked}}"-->
+      <!--style="margin-left: 12px"></wxc-button>-->
+      <!--</div>-->
+    </wxc-panel>
+
+    <wxc-panel title="Panels" type="primary">
+      <wxc-panel repeat="{{panels}}" title="Panels-{{type}}" type="{{type}}" border="1"
+                 style="margin-left: 12px;margin-right: 12px;">
+        <text>Panels {{type}} content. Panels {{type}} content. Panels {{type}} content.</text>
+      </wxc-panel>
+    </wxc-panel>
+
+    <wxc-panel title="List" type="primary">
+      <wxc-list-item repeat="{{tips}}" onclick="{{clicked}}">
+        <text class="item-txt">{{type}}</text>
+      </wxc-list-item>
+    </wxc-panel>
+
+    <wxc-panel title="Tips" type="primary">
+      <wxc-tip repeat="{{tips}}" style="margin-bottom: 20px;"
+               value="Panels {{type}} content. Panels {{type}} content. Panels {{type}} content."></wxc-tip>
+    </wxc-panel>
+  </scroller>
+</template>
+
+<script>
+  // javascript comment
+  /* online comment */
+  /**
+   * block comment
+   */
+  let foo = require('foo');
+  var bar = require('bar');
+  const obj = {
+    a: 1,
+    b: true,
+    c: false,
+    d: [1, '2', false, /regexp/]
+  };
+
+  var test = hello > 0 ? bar : 'd';
+
+  function baz() {
+    console.log('hello');
+  }
+
+  module.exports = {
+    baz: baz
+  };
+</script>
+
+<style>
+  /* css comment */
+  .item-txt {
+    font-size: 48px;
+    color: #555555;
+  }
+</style>
+
+<style scope>
+  .item-txt {
+    font-size: 48px;
+    color: #555555;
+  }
+</style>
