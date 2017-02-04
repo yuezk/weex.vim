@@ -1,23 +1,31 @@
 # weex.vim
-Weex syntax file for Vim.
+[Weex][] syntax file for Vim.
 
-Vim 的 [Weex][] 语法高亮插件
+## Demo
 
-## 如何安装
+* with [pangloss/vim-javascript][js](RECOMENDATION)
+    ![capture-with-vim-javascript.png](capture-with-vim-javascript.png)
+* without pangloss/vim-javascript
+    ![capture.png](capture.png)
 
-使用 [Vundle][vundle]:
+## Installation
+
+For better JavaScript syntax highlighting, [pangloss/vim-javascript][js] or 
+[othree/yajs.vim][yajs] is recommended, but not required.
+
+Use [Vundle][vundle]:
 
 ```
 Plugin 'yuezk/weex.vim'
 ```
 
-使用 [vim-plug][plug]:
+Use [vim-plug][plug]:
 
 ```
 Plug 'yuezk/weex.vim'
 ```
 
-使用 [NeoBundle][bundle]:
+Use [NeoBundle][bundle]:
 
 ```
 NeoBundle 'yuezk/weex.vim'
@@ -25,11 +33,18 @@ NeoBundle 'yuezk/weex.vim'
 
 ## Changelog
 
+### 2017-02-04
+
+- Improve syntax highlighting
+- Add demo captures
+
 ### 2016-05-28
 
-- 实现基本的语法高亮
+- Basic syntax highlighting
 
 [Weex]: http://alibaba.github.io/weex/
 [vundle]: https://github.com/gmarik/vundle
 [plug]: https://github.com/junegunn/vim-plug
 [bundle]: https://github.com/Shougo/neobundle.vim
+[js]: https://github.com/pangloss/vim-javascript
+[yajs]: https://github.com/othree/yajs.vim
