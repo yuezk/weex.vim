@@ -3,7 +3,7 @@
 
 ## Demo
 
-* with [pangloss/vim-javascript][js](RECOMENDATION)
+* with [pangloss/vim-javascript][js](RECOMMENDATION)
     ![capture-with-vim-javascript.png](capture-with-vim-javascript.png)
 * without pangloss/vim-javascript
     ![capture.png](capture.png)
@@ -32,6 +32,10 @@ NeoBundle 'yuezk/weex.vim'
 ```
 
 ## Changelog
+
+### 2017-02-09
+
+- Add indent file
 
 ### 2017-02-04
 
