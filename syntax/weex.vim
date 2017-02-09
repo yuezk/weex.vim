@@ -32,17 +32,16 @@ syn region weexTag contained start=+<\(template\|style\|script\)+ end=+>+ contai
 " highlight weex template|script|style end tag
 syn match weexEndTag +</\(template\|script\|style\)>+ contains=htmlTagN
 
-" {{}} syntax
+" {{ variable }} syntax
 syn region weexNormalInside matchgroup=weexBraces start=+\({\)\@<!{{\([{!%]\)\@!\~\?+ end=+\~\?\([%}]\)\@<!}}\(}\)\@!+ contained containedin=weexTemplate,htmlString,htmlValue,htmlEvent contains=@JS
 
 command! -nargs=+ HtmlHiLink hi def link <args>
 
-" template script style 标签高亮
+" highlight template script style tag use htmlTag
 HtmlHiLink weexTag htmlTag
 HtmlHiLink weexEndTag htmlTag
 HtmlHiLink weexComponent htmlTag
-" 大括号部分高亮
-" {{ }}
+" highlight {{ }}
 HtmlHiLink weexBraces Special
 
 let b:current_syntax = "weex"
