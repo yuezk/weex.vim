@@ -15,20 +15,19 @@ endfor
 
 let b:did_indent = 1
 
+setlocal indentexpr=GetWeexIndent()
+
 if exists('*GetWeexIndent')
     finish
 endif
 
 function! GetWeexIndent()
-    if searchpair('<template', '', '</template>', 'bWr')
-        exe 'let indent = ' . s:html_indent
-    elseif searchpair('<style', '', '</style>', 'bWr')
+    if searchpair('<style', '', '</style>', 'bWr')
         exe 'let indent = ' . s:css_indent
     elseif searchpair('<script', '', '</script>', 'bWr')
         exe 'let indent = ' . s:javascript_indent
     else
         exe 'let indent = ' . s:html_indent
     endif
-
-    return indent;
+    return indent > -1 ? indent : s:html_indent
 endfunction

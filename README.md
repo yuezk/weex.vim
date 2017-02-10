@@ -36,6 +36,7 @@ NeoBundle 'yuezk/weex.vim'
 ### 2017-02-10
 
 - Modify syntax region name for better comment
+- Imporove indent
 
 ### 2017-02-09
 

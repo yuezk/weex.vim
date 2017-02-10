@@ -5,6 +5,11 @@
       <text>{{title}}</text>
     </div>
   </template>
+  <style>
+    .container {
+      color: #ffffff;
+    }
+  </style>
   <script>
     module.exports = {
       data: {
