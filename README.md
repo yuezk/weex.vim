@@ -15,19 +15,19 @@ For better JavaScript syntax highlighting, [pangloss/vim-javascript][js] or
 
 Use [Vundle][vundle]:
 
-```
+```viml
 Plugin 'yuezk/weex.vim'
 ```
 
 Use [vim-plug][plug]:
 
-```
+```viml
 Plug 'yuezk/weex.vim'
 ```
 
 Use [NeoBundle][bundle]:
 
-```
+```viml
 NeoBundle 'yuezk/weex.vim'
 ```
 
