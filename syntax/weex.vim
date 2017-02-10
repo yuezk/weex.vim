@@ -15,17 +15,17 @@ syn region weexComponent start=+<+ end=+>+ contains=htmlString,htmlArg,htmlTagN 
 " highlight template contents
 syn include @HTML syntax/html.vim
 unlet b:current_syntax
-syn region weexTemplate keepend start=+<template\_[^>]*>+ end=+</template>+ contains=@HTML,weexTag fold
+syn region html keepend start=+<template\_[^>]*>+ end=+</template>+ contains=@HTML,weexTag fold
 
 " highlight script contents
 syn include @JS syntax/javascript.vim
 unlet b:current_syntax
-syn region weexScript keepend start=+<script\_[^>]*>+ end=+</script>+me=s-1 contains=@JS,weexTag fold
+syn region javascript keepend start=+<script\_[^>]*>+ end=+</script>+me=s-1 contains=@JS,weexTag fold
 
 " highlight style contents
 syn include @CSS syntax/css.vim
 unlet b:current_syntax
-syn region weexStyle keepend start=+<style\_[^>]*>+ end=+</style>+me=s-1 contains=@CSS,weexTag fold
+syn region css keepend start=+<style\_[^>]*>+ end=+</style>+me=s-1 contains=@CSS,weexTag fold
 
 " highlight weex template|script|style start tag
 syn region weexTag contained start=+<\(template\|style\|script\)+ end=+>+ contains=htmlString,htmlArg,htmlTagN fold 
@@ -33,7 +33,7 @@ syn region weexTag contained start=+<\(template\|style\|script\)+ end=+>+ contai
 syn match weexEndTag +</\(template\|script\|style\)>+ contains=htmlTagN
 
 " {{ variable }} syntax
-syn region weexNormalInside matchgroup=weexBraces start=+\({\)\@<!{{\([{!%]\)\@!\~\?+ end=+\~\?\([%}]\)\@<!}}\(}\)\@!+ contained containedin=weexTemplate,htmlString,htmlValue,htmlEvent contains=@JS
+syn region weexNormalInside matchgroup=weexBraces start=+\({\)\@<!{{\([{!%]\)\@!\~\?+ end=+\~\?\([%}]\)\@<!}}\(}\)\@!+ contained containedin=html,htmlString,htmlValue,htmlEvent contains=@JS
 
 command! -nargs=+ HtmlHiLink hi def link <args>
 

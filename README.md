@@ -33,6 +33,10 @@ NeoBundle 'yuezk/weex.vim'
 
 ## Changelog
 
+### 2017-02-10
+
+- Modify syntax region name for better comment
+
 ### 2017-02-09
 
 - Add indent file
